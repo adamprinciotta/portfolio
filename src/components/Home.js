@@ -14,21 +14,23 @@ function Home() {
         <span>'</span>
         <span>M</span>
         <br />
-        <span className="A">A</span>
-        <span>D</span>
-        <span>A</span>
-        <span>M</span>
-        <span>&nbsp; </span>
-        <span>P</span>
-        <span>R</span>
-        <span>I</span>
-        <span>N</span>
-        <span>C</span>
-        <span>I</span>
-        <span>O</span>
-        <span>T</span>
-        <span>T</span>
-        <span>A</span>
+        <div className="name">
+          <span className="A">A</span>
+          <span>D</span>
+          <span>A</span>
+          <span>M</span>
+          <span>&nbsp; </span>
+          <span>P</span>
+          <span>R</span>
+          <span>I</span>
+          <span>N</span>
+          <span>C</span>
+          <span>I</span>
+          <span>O</span>
+          <span>T</span>
+          <span>T</span>
+          <span>A</span>
+        </div>
         <br/>
         <span className="devTitle">F</span>
         <span className="devTitle">R</span>

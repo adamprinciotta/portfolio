@@ -8,11 +8,12 @@ h1{
 }
 
 .intro{
-    font-size: 60px;
+    font-size: 80px;
     position: absolute;
     top: 25%;
     left: 15%;
     transition: transform 0.15s ease-in-out;
+    animation-fill-mode: forwards; /* add this line */
 }
 
 .intro:hover{
@@ -32,23 +33,42 @@ h1{
       color: white;
       transform: scale(1);
     }
+    
   }
 
 
 span {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    cursor: default;
-    display: inline-block;
-    transition: transform 0.15s ease-in-out;
-    animation-fill-mode: forwards;
-    background-color: transparent;
-    margin-left: -5px;
-    padding-left: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: default;
+  display: inline-block;
+  transition: transform 0.15s ease-in-out;
+  animation-fill-mode: forwards;
+  background-color: transparent;
+  margin-left: -5px;
+  padding-left: 5px;
+  /* animation: color-animation 0.5s forwards; */
 }
+
+span.hovered {
+    color: #45F3FF;
+    transform: scale(1.2);
+    transition-delay: 0s;
+  }
+  
+  span:hover {
+    color: #45F3FF;
+    transform: scale(1.2);
+  }
+  
+  span:not(:hover) {
+    color: white;
+    transform: scale(1);
+  }
   
 span:hover {
-    animation: color-animation 0.5s forwards;
-}
+    animation: color-animation 0.5s forwards !important;
+  }  
+
   
 
 .A{
@@ -66,4 +86,9 @@ span:hover {
     position: relative;
     top: -30px;
     font-size: 30px;
+}
+
+.name{
+    border-bottom: 1px solid #45F3FF;
+    margin-bottom: -100px;
 }
