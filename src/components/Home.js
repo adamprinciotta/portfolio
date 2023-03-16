@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/Home.css';
+import SG from '../images/Skullgirls Logo.png';
 
 function Home() {
   return (
@@ -55,7 +56,9 @@ function Home() {
     </div>
     
     <div className="scrollDown"><span className="movingScroll">Scroll Down</span> --{">"}</div>
+    
     <div className="spacer"></div>
+    <hr></hr>
 
     <div className="aboutMe">
       <h1>About Me</h1>
@@ -78,7 +81,37 @@ function Home() {
         <a className="toContact">Let's work together to bring your web project to life!</a>
         </p>
     </div>
-    <div className="spacer"></div>
+    <hr style={{marginTop: "40px"}}></hr>
+    <div className="portfolio">
+      <h1>My Portfolio</h1>
+      <div className="cards">
+        <div className="card">
+          
+          <div className="card2">
+            <div className="cardTitle">One More Once</div>
+            <img src={SG}></img>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card2">
+            
+          </div>
+        </div>
+        <div className="card">
+          <div className="card2">
+            
+          </div>
+        </div>
+        <div className="card">
+          <div className="card2">
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    {/* <div className="scrollDown2"><span className="movingScroll">Scroll Down</span> --{">"}</div> */}
+    <div className="spacer" style={{marginTop: "100px"}}></div>
     </>
   );
 }
