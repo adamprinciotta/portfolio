@@ -1,10 +1,7 @@
 *{
     background-color: #212121;
     color: white;
-}
-h1{
-    color: rgb(100, 100, 100);
-    text-shadow: #45F3FF 2px 2px 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .intro{
@@ -13,7 +10,8 @@ h1{
     top: 25%;
     left: 15%;
     transition: transform 0.15s ease-in-out;
-    animation-fill-mode: forwards; /* add this line */
+    animation-fill-mode: forwards;
+    background-color: transparent;
 }
 
 .intro:hover{
@@ -38,7 +36,7 @@ h1{
 
 
 span {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
   cursor: default;
   display: inline-block;
   transition: transform 0.15s ease-in-out;
@@ -91,4 +89,75 @@ span:hover {
 .name{
     border-bottom: 1px solid #45F3FF;
     margin-bottom: -100px;
+}
+
+.scrollDown{
+  rotate: 90deg;
+  position: absolute;
+  top: 90%;
+}
+
+.spacer{
+  height: 90vh;
+}
+
+
+@keyframes scroll-move {
+  0% {
+    top: 90%;
+  }
+  50% {
+    top: 87%;
+  }
+  100% {
+    top: 90%;
+  }
+  
+}
+
+.scrollDown{
+  animation: scroll-move 2s forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.movingScroll{
+  font-size: 14px;
+} 
+
+
+.aboutMe h1{
+    font-size: 50px;
+    position: relative;
+    left: 5%;
+    width: 75%;
+    cursor: default;
+}
+
+.aboutMe h1::first-letter{
+  padding-left: 2px;
+  font-size: 1.5em;
+  color: white;
+  text-shadow: #45F3FF -7px 0 0;
+}
+
+.aboutMe p{
+  font-size: 20px;
+  margin: 0 auto;
+  width: 65%;
+  /* border: 1px solid #45F3FF; */
+  box-shadow: 0px 0px 20px #45F3FF;
+  padding: 10px;
+  height: 100%;
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+
+
+.toContact{
+  font-family: monospace;
+  font-size: 20px;
+  color: #45F3FF;
+  text-shadow: gray 2px 1px 1px;
+  cursor: pointer;
 }
