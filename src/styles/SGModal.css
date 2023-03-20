@@ -1,0 +1,19 @@
+.modalTitle{
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+}
+
+.contentText{
+    padding: 5px 5px;
+}
+img{
+    width: 75%;
+    height: 100%;
+    object-fit: contain;
+}

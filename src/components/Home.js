@@ -4,7 +4,12 @@ import SG from '../images/Skullgirls Logo.png';
 import ToDo from '../images/Todo.PNG';
 import TechDoc from '../images/TechnicalDoc.PNG';
 
+import Modal from '../components/Modal.js';
+
+import {useState} from 'react';
+
 function Home() {
+  const [show, setShow] = useState(false);
   return (
     <><div>
       {/* <h1>Welcome to my website!</h1> */}
@@ -87,16 +92,22 @@ function Home() {
     <div className="portfolio">
       <h1>My Portfolio</h1>
       <div className="cards">
-        <div className="card">
+        <div className="card" onClick={() => setShow(true)}>
           <div className="card2">
             <div className="cardTitle">One More Once</div>
             <img src={SG}></img>
+            <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
+              <p>This is modal body</p>
+            </Modal>
           </div>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => setShow(true)}>
           <div className="card2">
             <div className="cardTitle">ToDo List</div>
             <img src={ToDo}></img>
+            <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
+              <p>This is modal body 2</p>
+            </Modal>
           </div>
         </div>
         <div className="card">
@@ -143,9 +154,13 @@ function Home() {
           <div className="skillTitle">MySQL <span class="skillSpan">40%</span></div>
           <div className="skillBar"><div className="barPercent forty"></div></div>
         </div>
-        
       </div>
     </div>
+    <hr></hr>
+    <button onClick={() => setShow(true)}>Show Modal</button>
+      <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
+        <p>This is modal body 2</p>
+      </Modal>
     <div className="spacer" style={{marginTop: "100px"}}></div>
     
     </>
