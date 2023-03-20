@@ -86,7 +86,6 @@ function Home() {
       <h1>My Portfolio</h1>
       <div className="cards">
         <div className="card">
-          
           <div className="card2">
             <div className="cardTitle">One More Once</div>
             <img src={SG}></img>
