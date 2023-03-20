@@ -1,6 +1,8 @@
 import React from "react";
 import '../styles/Home.css';
 import SG from '../images/Skullgirls Logo.png';
+import ToDo from '../images/Todo.PNG';
+import TechDoc from '../images/TechnicalDoc.PNG';
 
 function Home() {
   return (
@@ -93,24 +95,59 @@ function Home() {
         </div>
         <div className="card">
           <div className="card2">
-            
+            <div className="cardTitle">ToDo List</div>
+            <img src={ToDo}></img>
           </div>
         </div>
         <div className="card">
           <div className="card2">
-            
+            <div className="cardTitle">Technical Documentation</div>
+            <img src={TechDoc}></img>
           </div>
         </div>
         <div className="card">
           <div className="card2">
-            
+            <div className="cardTitle">Landing Page</div>
+            <img src={TechDoc}></img>
           </div>
         </div>
       </div>
       
     </div>
     {/* <div className="scrollDown2"><span className="movingScroll">Scroll Down</span> --{">"}</div> */}
+    <hr style={{marginTop: "40px"}}></hr>
+    <div className="skills">
+      <h1>Skills</h1>
+      <div className="skillsList">
+        <div className="skill">
+          <div className="skillTitle">HTML <span class="skillSpan">80%</span></div>
+          <div className="skillBar"><div className="barPercent eighty"></div></div>
+        </div>
+        <div className="skill">
+          <div className="skillTitle">CSS <span class="skillSpan">75%</span></div>
+          <div className="skillBar"><div className="barPercent seventyFive"></div></div>
+        </div>
+        <div className="skill">
+          <div className="skillTitle">React <span class="skillSpan">75%</span></div>
+          <div className="skillBar"><div className="barPercent seventyFive"></div></div>
+        </div>
+        <div className="skill">
+          <div className="skillTitle">JavaScript <span class="skillSpan">85%</span></div>
+          <div className="skillBar"><div className="barPercent eightyFive"></div></div>
+        </div>
+        <div className="skill">
+          <div className="skillTitle">Node.js <span class="skillSpan">50%</span></div>
+          <div className="skillBar"><div className="barPercent fifty"></div></div>
+        </div>
+        <div className="skill">
+          <div className="skillTitle">MySQL <span class="skillSpan">40%</span></div>
+          <div className="skillBar"><div className="barPercent forty"></div></div>
+        </div>
+        
+      </div>
+    </div>
     <div className="spacer" style={{marginTop: "100px"}}></div>
+    
     </>
   );
 }

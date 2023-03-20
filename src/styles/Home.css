@@ -47,23 +47,26 @@ span {
   /* animation: color-animation 0.5s forwards; */
 }
 
-span.hovered {
+/* span.hovered { */
+.bounce, .devTitle{
     color: #45F3FF;
     transform: scale(1.2);
     transition-delay: 0s;
   }
   
-  span:hover {
+  /* span:hover { */
+.bounce:hover, .devTitle:hover{
     color: #45F3FF;
     transform: scale(1.2);
   }
   
-  span:not(:hover) {
+span:not(:hover) {
     color: white;
     transform: scale(1);
   }
   
-span:hover {
+/* span:hover { */
+.bounce:hover, .devTitle:hover{
     animation: color-animation 0.5s forwards !important;
   }  
 
@@ -231,6 +234,7 @@ h1::first-letter{
   transition: transform 0.3s ease;
  }
 
+
  .card2 img{
   width: 90%;
   background-color: transparent;
@@ -245,4 +249,63 @@ h1::first-letter{
  .card2 .cardTitle:hover, .card2 img:hover{
   cursor: pointer;
   transform: scale(1.2);
+ }
+
+
+.skillsList{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.skillTitle{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+
+.skill{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.skillSpan{
+  display: flex;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding-right: 2px;
+}
+
+.skillBar{
+  width: 100%;
+  height: 30px;
+  background-color: #2B3945;
+  margin-top: 5px;
+}
+
+.barPercent{
+  height: 30px;
+  background-color: #A1EAFB;
+}
+ .eighty{
+  width: 80%;
+ }
+
+ .seventyFive{
+  width: 75%;
+ }
+
+ .eightyFive{
+  width: 85%;
+ }
+
+ .fifty{
+  width: 50%;
+ }
+
+ .forty{
+  width: 40%;
  }
