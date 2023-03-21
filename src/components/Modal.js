@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import "../styles/Modal.css";
 
-const Modal = props => {
-  const closeOnEscapeKeyDown = e => {
+const Modal = (props) => {
+  const closeOnEscapeKeyDown = (e) => {
     if ((e.charCode || e.keyCode) === 27) {
       props.onClose();
     }
@@ -17,6 +17,8 @@ const Modal = props => {
     };
   }, []);
 
+  console.log(props.link);
+
   return ReactDOM.createPortal(
     <CSSTransition
       in={props.show}
@@ -24,11 +26,19 @@ const Modal = props => {
       timeout={{ enter: 0, exit: 300 }}
     >
       <div className="modal" onClick={props.onClose}>
-        <div className="modal-content" onClick={e => e.stopPropagation()}>
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <div className="modal-header">
             <h4 className="modal-title">{props.title}</h4>
           </div>
           <div className="modal-body">{props.children}</div>
+          <div className="modal-links">
+            <a href={props.link} target="_blank" className="link">
+              Link to Project
+            </a>
+            <a href={props.github} target="_blank" className="link">
+              Link to Github
+            </a>
+          </div>
           <div className="modal-footer">
             <button onClick={props.onClose} className="button">
               Close

@@ -1,61 +1,95 @@
-/* Majority of this modal code from Thi Tran
+/* Majority of this modal starter CSS code from Thi Tran
  https://medium.com/tinyso/how-to-create-a-modal-component-in-react-from-basic-to-advanced-a3357a2a716a
 */
 
 .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
-  }
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
   
-  .modal.enter-done {
-    opacity: 1;
-    pointer-events: visible;
-  }
+.modal.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+}
   
-  .modal.exit {
-    opacity: 0;
-  }
+.modal.exit {
+  opacity: 0;
+}
   
-  .modal-content {
-    width: 75vw;
-    height: 75vh;
-    background-color: #fff;
-    transition: all 0.3s ease-in-out;
-    transform: translateY(-200px);
-  }
+.modal-content {
+  width: 75vw;
+  height: 75vh;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-200px);
+  border: 10px solid white;
+  border-radius: 5px;
+}
   
-  .modal.enter-done .modal-content {
-    transform: translateY(0);
-  }
+.modal.enter-done .modal-content {
+  transform: translateY(0);
+}
   
-  .modal.exit .modal-content {
-    transform: translateY(-200px);
-  }
+.modal.exit .modal-content {
+  transform: translateY(-200px);
+}
   
-  .modal-header,
-  .modal-footer {
-    padding: 10px;
-    height: 5%;
-  }
+.modal-header,
+.modal-footer {
+  padding: 10px;
+  height: 5%;
+}
   
-  .modal-title {
-    margin: 0;
-  }
+.modal-title {
+  margin: 0;
+}
   
-  .modal-body {
-    height: 90%;
-    padding: 10px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-  }
+.modal-body {
+  height: 90%;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
   
+.modal-links{
+  display: flex;
+  justify-content: space-evenly;
+  height: 5%;
+}
+
+.link{  
+  display: flex;
+  justify-content: center;
+  background-color: darkblue;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  align-items: center;
+  }
+
+.modal-footer{
+  display: flex;
+  justify-content: center;
+}
+
+.button{
+  width: 25%;
+  background-color: #eee;
+  color: darkgray;
+}
+
+.modal-border{
+  border: 15px solid white;
+  border-radius: 5px;
+  
+}
