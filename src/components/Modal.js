@@ -26,24 +26,27 @@ const Modal = (props) => {
       timeout={{ enter: 0, exit: 300 }}
     >
       <div className="modal" onClick={props.onClose}>
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          <div className="modal-header">
-            <h4 className="modal-title">{props.title}</h4>
+        <div className="modal-border" onClick={props.onClose}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-exit">
+              <button onClick={props.onClose} className="button">
+                X
+              </button>
+            </div>
+            <div className="modal-header">
+              <h4 className="modal-title">{props.title}</h4>
+            </div>
+            <div className="modal-body">{props.children}</div>
+            <div className="modal-links">
+              <a href={props.link} target="_blank" className="link">
+                Link to Project
+              </a>
+              <a href={props.github} target="_blank" className="link">
+                Link to Github
+              </a>
+            </div>
           </div>
-          <div className="modal-body">{props.children}</div>
-          <div className="modal-links">
-            <a href={props.link} target="_blank" className="link">
-              Link to Project
-            </a>
-            <a href={props.github} target="_blank" className="link">
-              Link to Github
-            </a>
-          </div>
-          <div className="modal-footer">
-            <button onClick={props.onClose} className="button">
-              Close
-            </button>
-          </div>
+          <div className="space"></div>
         </div>
       </div>
     </CSSTransition>,
