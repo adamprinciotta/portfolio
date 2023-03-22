@@ -15,16 +15,16 @@
   transition: all 0.3s ease-in-out;
   pointer-events: none;
 }
-  
+
 .modal.enter-done {
   opacity: 1;
   pointer-events: visible;
 }
-  
+
 .modal.exit {
   opacity: 0;
 }
-  
+
 .modal-content {
   position: relative;
   width: 75vw;
@@ -33,17 +33,16 @@
   transition: all 0.3s ease-in-out;
   transform: translateY(-200px);
 }
-  
+
 .modal.enter-done .modal-content {
   transform: translateY(0);
 }
-  
+
 .modal.exit .modal-content {
   transform: translateY(-200px);
 }
-  
 
-.modal-header{
+.modal-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,19 +55,20 @@
   padding: 10px;
   height: 10%;
 }
-  
+
 .modal-title {
   margin: 0;
 }
-  
+
 .modal-body {
   height: 86%;
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+  font-size: 24px;
 }
-  
-.modal-links{
+
+.modal-links {
   display: flex;
   justify-content: space-evenly;
   height: 10%;
@@ -76,7 +76,7 @@
   align-items: center;
 }
 
-.link{  
+.link {
   display: flex;
   justify-content: center;
   background-color: darkblue;
@@ -84,29 +84,28 @@
   padding: 5px;
   border-radius: 5px;
   align-items: center;
-  }
+}
 
+.modal-exit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
 
-  .modal-exit {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-  }
-
-  .button {
-    width: 25px;
-    height: 25px;
-    background-color: #eee;
-    color: darkgray;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    border: 2px solid black;
-    border-radius: 5px;
-    color: black;
-  }
+.button {
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  color: darkgray;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: black;
+}
 
 .modal-border {
   background-color: #fff;
@@ -124,9 +123,8 @@
   margin-bottom: 30px;
 }
 
-.space{
+.space {
   height: 10px;
   width: 10px;
   background-color: transparent;
 }
-

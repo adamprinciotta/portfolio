@@ -41,6 +41,8 @@ function Home() {
     setShow(true);
   }
 
+
+  
   return (
     <>
       <div>
@@ -143,7 +145,7 @@ function Home() {
             onClick={() =>
               changeModal({
                 header: "Online Video Database",
-                body: "One more once is an online video database for the fighting game Skullgirls. It takes user submissions for links to matches and compiles them in one place. I created a customized dropdown menu to help decide which characters or teams the user would like to see. I also implemented a search functionality to help narrow down the matches to only those that the user would like to see.",
+                body: "One More Once is an online video database exclusively dedicated to hosting gameplay footage of the fighting game Skullgirls. It functions by gathering user submissions of match links and organizing them in a single, centralized location. To improve the user experience, I developed a tailored dropdown menu to allow for easy selection of preferred characters or teams to view. Additionally, I integrated a search feature to enable users to efficiently locate specific matches that align with their interests.",
                 link: "https://onemoreonce.net/",
                 github:
                   "https://github.com/adamprinciotta/online_video_database",
@@ -158,11 +160,16 @@ function Home() {
           <div
             className="card"
             onClick={() =>
-              changeModal({ header: "To Do", body: "This is a To Do List" })
+              changeModal({
+                header: "To Do List",
+                body: "I developed a personalized task management system that is seamlessly connected to each user's account. This feature enables users to log in to their account from any device and keep track of their progress at any time. With this system, users have the flexibility to name their tasks, specify their due date and time, designate their task type, and select which days the task will recur. Once created, users can customize their tasks as needed and remove any that are no longer relevant. The system will display the task list only on the designated recurring days, and users can easily track their progress by marking each task as completed or incomplete.",
+                link: "",
+                github: "",
+              })
             }
           >
             <div className="card2">
-              <div className="cardTitle">ToDo List</div>
+              <div className="cardTitle">To Do List</div>
               <img src={ToDo}></img>
             </div>
           </div>
@@ -170,8 +177,10 @@ function Home() {
             className="card"
             onClick={() =>
               changeModal({
-                header: "Technical Doc",
-                body: "This is a Technical Doc",
+                header: "Technical Documentation",
+                body: "I developed a technical documentation page that comprehensively covers four core coding structures, namely variables, functions, loops, and conditionals. The documentation provides an explanation of each structure, including practical applications and coding examples to illustrate their use. The page is user-friendly, with a simple and intuitive navigation system that makes it easy for users to locate the information they need.",
+                link: "",
+                github: "",
               })
             }
           >
@@ -183,7 +192,12 @@ function Home() {
           <div
             className="card"
             onClick={() =>
-              changeModal({ header: "About Me", body: "This is a About Me" })
+              changeModal({
+                header: "EcoBottle Landing Page",
+                body: "I designed and developed a landing page for a fictitious company named EcoBottle. The page comprises several user-friendly features, including an intuitive navigation bar, a section for signing up to receive email updates from the company, a comprehensive list of features, a testimonial from a satisfied customer, a pricing section with images of the available options, a clear call-to-action message, and a copyright footer.",
+                link: "",
+                github: "",
+              })
             }
           >
             <div className="card2">
@@ -258,7 +272,44 @@ function Home() {
         </div>
       </div>
       <hr></hr>
-      <div className="spacer" style={{ marginTop: "100px" }}></div>
+      {/* <div className="spacer" style={{ marginTop: "100px" }}></div> */}
+      <div className="contact">
+        <h1>Contact Me</h1>
+        <div className="formBox">
+          <div class="nameEmail">
+            <div class="inputbox">
+              <input required="required" type="text" />
+              <span>Name</span>
+              <i></i>
+            </div>
+            <br></br>
+            <div class="inputbox">
+              <input required="required" type="text" />
+              <span>Email</span>
+              <i></i>
+            </div>
+          </div>
+          <div class="inputbox subject">
+              <input required="required" type="text" />
+              <span>Subject</span>
+              <i></i>
+          </div>
+          <div class="inputbox message">
+            <p className="messageP">Message</p>
+            <textarea required="required" rows="10" id="textarea"></textarea>
+
+            {/* 
+            const myTextArea = document.getElementById("myTextArea");
+            myTextArea.addEventListener("focus", function() {
+              myTextArea.classList.add("active");
+            });
+            myTextArea.addEventListener("blur", function() {
+              myTextArea.classList.remove("active");
+            }); */}
+            {/* <i></i> */}
+          </div>
+        </div>
+      </div>
     </>
   );
 }

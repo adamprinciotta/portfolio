@@ -1,10 +1,10 @@
-*{
+* {
   background-color: #212121;
   color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.intro{
+.intro {
   font-size: 80px;
   position: absolute;
   top: 25%;
@@ -14,29 +14,26 @@
   background-color: transparent;
 }
 
-.intro:hover{
-    transform: scale(1.2);
+.intro:hover {
+  transform: scale(1.2);
 }
 
 @keyframes color-animation {
-    0% {
-      color: white;
-      transform: scale(0.75, 1.25);
-    }
-    50% {
-      color: #45F3FF;
-      transform: scale(1.25, 0.75);
-    }
-    100% {
-      color: white;
-      transform: scale(1);
-    }
-    
+  0% {
+    color: white;
+    transform: scale(0.75, 1.25);
   }
-
+  50% {
+    color: #45f3ff;
+    transform: scale(1.25, 0.75);
+  }
+  100% {
+    color: white;
+    transform: scale(1);
+  }
+}
 
 span {
-  
   cursor: default;
   display: inline-block;
   transition: transform 0.15s ease-in-out;
@@ -48,62 +45,62 @@ span {
 }
 
 /* span.hovered { */
-.bounce, .devTitle{
-    color: #45F3FF;
-    transform: scale(1.2);
-    transition-delay: 0s;
-  }
-  
-  /* span:hover { */
-.bounce:hover, .devTitle:hover{
-    color: #45F3FF;
-    transform: scale(1.2);
-  }
-  
-span:not(:hover) {
-    color: white;
-    transform: scale(1);
-  }
-  
+.bounce,
+.devTitle {
+  color: #45f3ff;
+  transform: scale(1.2);
+  transition-delay: 0s;
+}
+
 /* span:hover { */
-.bounce:hover, .devTitle:hover{
-    animation: color-animation 0.5s forwards !important;
-  }  
-
-  
-
-.A{
-    padding-left: 2px;
-    font-size: 1.5em;
-    color: white;
-    text-shadow: #45F3FF -7px 0 0;
+.bounce:hover,
+.devTitle:hover {
+  color: #45f3ff;
+  transform: scale(1.2);
 }
 
-.A:hover{
-    transform: scale(1.2);
+span:not(:hover) {
+  color: white;
+  transform: scale(1);
 }
 
-.devTitle{
-    position: relative;
-    top: -30px;
-    font-size: 30px;
+/* span:hover { */
+.bounce:hover,
+.devTitle:hover {
+  animation: color-animation 0.5s forwards !important;
 }
 
-.name{
-    border-bottom: 1px solid #45F3FF;
-    margin-bottom: -100px;
+.A {
+  padding-left: 2px;
+  font-size: 1.5em;
+  color: white;
+  text-shadow: #45f3ff -7px 0 0;
 }
 
-.scrollDown{
+.A:hover {
+  transform: scale(1.2);
+}
+
+.devTitle {
+  position: relative;
+  top: -30px;
+  font-size: 30px;
+}
+
+.name {
+  border-bottom: 1px solid #45f3ff;
+  margin-bottom: -100px;
+}
+
+.scrollDown {
   rotate: 90deg;
   position: absolute;
   top: 90%;
 }
 
-.spacer{
+.spacer {
   height: 90vh;
 }
-
 
 @keyframes scroll-move {
   0% {
@@ -115,41 +112,39 @@ span:not(:hover) {
   100% {
     top: 90%;
   }
-  
 }
 
-.scrollDown{
+.scrollDown {
   animation: scroll-move 2s forwards;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
-.movingScroll{
+.movingScroll {
   font-size: 18px;
-} 
-
-
-h1{
-    font-size: 50px;
-    position: relative;
-    left: 5%;
-    width: 75%;
-    cursor: default;
 }
 
-h1::first-letter{
+h1 {
+  font-size: 50px;
+  position: relative;
+  left: 5%;
+  width: 75%;
+  cursor: default;
+}
+
+h1::first-letter {
   padding-left: 2px;
   font-size: 1.5em;
   color: white;
-  text-shadow: #45F3FF -4px 0 0;
+  text-shadow: #45f3ff -4px 0 0;
 }
 
-.aboutMe p{
+.aboutMe p {
   font-size: 20px;
   margin: 0 auto;
   width: 65%;
   /* border: 1px solid #45F3FF; */
-  box-shadow: 0px 0px 20px #45F3FF;
+  box-shadow: 0px 0px 20px #45f3ff;
   padding: 10px;
   height: 100%;
   margin-bottom: 10px;
@@ -158,16 +153,15 @@ h1::first-letter{
   z-index: 2;
 }
 
-
-.toContact{
+.toContact {
   font-family: monospace;
   font-size: 20px;
-  color: #45F3FF;
+  color: #45f3ff;
   text-shadow: gray 2px 1px 1px;
   cursor: pointer;
 }
 
-.scrollDown2{
+.scrollDown2 {
   rotate: 90deg;
   position: relative;
   left: -22%;
@@ -177,7 +171,6 @@ h1::first-letter{
   width: 100vh;
   background-color: blue;
 }
-
 
 .cards {
   display: flex;
@@ -196,33 +189,31 @@ h1::first-letter{
   height: calc((100vh / 3) * 1.25);
   background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
   border-radius: 20px;
-  transition: all .3s;
-  
- }
- 
- .card2 {
+  transition: all 0.3s;
+}
+
+.card2 {
   position: relative;
   width: calc(100vh / 3);
   height: calc((100vh / 3) * 1.25);
   background-color: #333;
   border-radius: 10px;
-  transition: all .2s;
+  transition: all 0.2s;
   border: 1px solid white;
- }
- 
- .card2:hover {
+}
+
+.card2:hover {
   transform: scale(0.98);
   border-radius: 20px;
   border: none;
- }
- 
- .card:hover {
-  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
   cursor: pointer;
- }
+}
 
-
- .card2 .cardTitle{
+.card2 .cardTitle {
   position: absolute;
   font-size: 24px;
   width: 100%;
@@ -232,10 +223,9 @@ h1::first-letter{
   background-color: transparent;
   transform: scale(1);
   transition: transform 0.3s ease;
- }
+}
 
-
- .card2 img{
+.card2 img {
   width: 90%;
   background-color: transparent;
   position: absolute;
@@ -244,68 +234,210 @@ h1::first-letter{
   transform: scale(1);
   transition: transform 0.3s ease;
   margin-top: 40px;
- }
+}
 
- .card2 .cardTitle:hover, .card2 img:hover{
+.card2 .cardTitle:hover,
+.card2 img:hover {
   cursor: pointer;
   transform: scale(1.2);
- }
+}
 
-
-.skillsList{
+.skills{
+  padding-bottom: 20px;
+}
+.skillsList {
   width: 80%;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
 
-.skillTitle{
+.skillTitle {
   display: flex;
   justify-content: space-between;
   font-size: 30px;
 }
 
-.skill{
+.skill {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   padding-bottom: 10px;
 }
 
-.skillSpan{
+.skillSpan {
   display: flex;
   border: 1px solid white;
   border-radius: 5px;
   padding-right: 2px;
 }
 
-.skillBar{
+.skillBar {
   width: 100%;
   height: 30px;
-  background-color: #2B3945;
+  background-color: #2b3945;
   margin-top: 5px;
 }
 
-.barPercent{
+.barPercent {
   height: 30px;
-  background-color: #A1EAFB;
+  background-color: #a1eafb;
 }
- .eighty{
+.eighty {
   width: 80%;
- }
+}
 
- .seventyFive{
+.seventyFive {
   width: 75%;
- }
+}
 
- .eightyFive{
+.eightyFive {
   width: 85%;
- }
+}
 
- .fifty{
+.fifty {
   width: 50%;
- }
+}
 
- .forty{
+.forty {
   width: 40%;
- }
+}
+
+
+.contact{
+  padding-bottom: 50px;
+}
+
+.formBox{
+  width: 50%;
+  height: 50%;
+  position: relative;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%);
+  border: 1px solid white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.nameEmail{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inputbox {
+  position: relative;
+  /* left: 20%; */
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* , .inputbox textarea */
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+  
+}
+
+/* .inputbox textarea {
+  color: white;
+} */
+
+.inputbox span {
+  position: absolute;
+  left: 5px;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span
+/* .inputbox textarea:valid ~ span,
+.inputbox textarea:focus ~ span{ */{
+  color: #45f3ff;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0, 75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i{
+  height: 44px;
+}
+
+
+.subject{
+  position: relative;
+  left: 5%;
+  padding-top: 20px;
+  width: 90%;
+}
+
+
+.inputbox textarea:valid ~ i,
+.inputbox textarea:focus ~ i{
+  height: 300px;
+}
+
+
+.inputbox textarea:valid ~ span,
+.inputbox textarea:focus ~ span{
+  color: #45f3ff;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0, 75em;
+  height: 300px;
+}
+
+.message{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 5%;
+  padding-top: 20px;
+  width: 90%;
+  height: 300px;
+}
+
+.messageP{
+  text-align: left;
+  font-size: 20px;
+}
+
+textarea{
+  width: 45vw;
+  max-width: 45vw;
+  height: 100%;
+}
+
+.textarea:focus{
+  background-color: #45f3ff;
+}
+
