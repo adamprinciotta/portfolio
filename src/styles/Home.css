@@ -154,10 +154,29 @@ h1::first-letter {
 }
 
 .toContact {
+  display: inline-block;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
   font-family: monospace;
   font-size: 20px;
   color: #45f3ff;
   text-shadow: gray 2px 1px 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  
+}
+
+
+.toContact:hover {
+  color: black;
+  /* text-shadow: #45f3ff 2px 2px 2px; */
+  transform: scale(1.1);
+  text-shadow: 
+  -1px -1px 0 #45f3ff, /* top left shadow */
+  1px -1px 0 #45f3ff,  /* top right shadow */
+  -1px 1px 0 #45f3ff,  /* bottom left shadow */
+  1px 1px 0 #45f3ff;   /* bottom right shadow */
   cursor: pointer;
 }
 
@@ -309,7 +328,7 @@ h1::first-letter {
 }
 
 .formBox{
-  width: 50%;
+  width: 75%;
   height: 50%;
   position: relative;
   justify-content: center;
@@ -428,16 +447,100 @@ h1::first-letter {
 
 .messageP{
   text-align: left;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 textarea{
-  width: 45vw;
-  max-width: 45vw;
+  width: 100%;
+  max-width: 100%;
   height: 100%;
+  font-size: 20px;
 }
 
 .textarea:focus{
   background-color: #45f3ff;
 }
 
+
+
+
+
+
+/* sendMessageBtn css by mrhyddenn */
+.sendMessageBtn {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2%;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(31, 72, 207);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.sendMessageBtn:hover {
+  background: rgb(26, 57, 158);
+  box-shadow: 0 0 30px 5px rgb(31, 72, 207, 0.8);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.sendMessageBtn:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.sendMessageBtn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.sendMessageBtn:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}

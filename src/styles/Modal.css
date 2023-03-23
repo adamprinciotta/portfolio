@@ -107,6 +107,10 @@
   color: black;
 }
 
+.button:hover{
+  cursor: pointer;
+}
+
 .modal-border {
   background-color: #fff;
   border: 10px solid white;

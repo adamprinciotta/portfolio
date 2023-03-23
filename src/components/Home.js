@@ -41,13 +41,37 @@ function Home() {
     setShow(true);
   }
 
+  function sendMessage(){
 
-  
+  }
+
   return (
     <>
       <div>
+        <navbar id="home">
+          <nav>
+            <div className="title">Adam Princiotta</div>
+            <ul>
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#about">About Me</a>
+              </li>
+              <li>
+                <a href="#portfolio">Portfolio</a>
+              </li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </navbar>
         {/* <h1>Welcome to my website!</h1> */}
-        <div className="intro">
+        <div className="intro" >
           <span className="bounce">H</span>
           <span className="bounce">I</span>
           <span className="bounce">,</span>
@@ -103,7 +127,7 @@ function Home() {
       <div className="spacer"></div>
       <hr></hr>
 
-      <div className="aboutMe">
+      <div className="aboutMe" id="about">
         <h1>About Me</h1>
         <p>
           I'm a front-end developer with a passion for creating responsive and
@@ -131,13 +155,13 @@ function Home() {
           <br />
           <br />
           {/* Make this link to the contact page */}
-          <a className="toContact">
+          <a className="toContact" href="#contact">
             Let's work together to bring your web project to life!
           </a>
         </p>
       </div>
       <hr style={{ marginTop: "40px" }}></hr>
-      <div className="portfolio">
+      <div className="portfolio" id="portfolio">
         <h1>My Portfolio</h1>
         <div className="cards">
           <div
@@ -218,7 +242,7 @@ function Home() {
       </div>
       {/* <div className="scrollDown2"><span className="movingScroll">Scroll Down</span> --{">"}</div> */}
       <hr style={{ marginTop: "40px" }}></hr>
-      <div className="skills">
+      <div className="skills" id="skills">
         <h1>Skills</h1>
         <div className="skillsList">
           <div className="skill">
@@ -273,7 +297,7 @@ function Home() {
       </div>
       <hr></hr>
       {/* <div className="spacer" style={{ marginTop: "100px" }}></div> */}
-      <div className="contact">
+      <div className="contact" id="contact">
         <h1>Contact Me</h1>
         <div className="formBox">
           <div class="nameEmail">
@@ -290,9 +314,9 @@ function Home() {
             </div>
           </div>
           <div class="inputbox subject">
-              <input required="required" type="text" />
-              <span>Subject</span>
-              <i></i>
+            <input required="required" type="text" />
+            <span>Subject</span>
+            <i></i>
           </div>
           <div class="inputbox message">
             <p className="messageP">Message</p>
@@ -308,6 +332,7 @@ function Home() {
             }); */}
             {/* <i></i> */}
           </div>
+          <button className="sendMessageBtn" onClick={() => sendMessage}>Send Message</button>
         </div>
       </div>
     </>

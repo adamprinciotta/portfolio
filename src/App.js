@@ -33,29 +33,36 @@ import './App.css';
 
 function App() {
   return (
+    <Home></Home>
     
-    <Router>
-      <nav>
-        <div className="title">Adam Princiotta</div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-      <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/contact" element={<Contact/>} />
-        </Routes>
+    // <Router>
+    //   <nav>
+    //     <div className="title">Adam Princiotta</div>
+    //     <ul>
+    //       <li>
+    //         <Link to="/">Home</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/about">About</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/portfolio">Portfolio</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/skills">Skills</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/contact">Contact</Link>
+    //       </li>
+    //     </ul>
+    //   </nav>
+    //   <Routes>
+    //       <Route exact path="/" element={<Home/>} />
+    //       <Route path="/about" element={<About/>} />
+    //       <Route path="/contact" element={<Contact/>} />
+    //     </Routes>
 
-    </Router>
+    // </Router>
 
   );
 }
