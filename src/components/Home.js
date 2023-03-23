@@ -3,10 +3,11 @@ import "../styles/Home.css";
 import SG from "../images/Skullgirls Logo.png";
 import ToDo from "../images/Todo.PNG";
 import TechDoc from "../images/TechnicalDoc.PNG";
+import Arrow from "../images/arrow.png";
 
 import Modal from "../components/Modal.js";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Home() {
   const [show, setShow] = useState(false);
@@ -16,22 +17,24 @@ function Home() {
   const [modalLink, setModalLink] = useState("");
   const [modalGithub, setModalGithub] = useState("");
 
-  // function changeModal(project) {
-  //   if(project === 'todo') {
-  //     setModalHeader('To Do')
-  //     setModalBody('This is a To Do List')
-  //   } else if(project === 'techdoc') {
-  //     setModalHeader('Technical Doc')
-  //     setModalBody('This is a Technical Doc')
-  //   } else if (project === 'sg') {
-  //     setModalHeader('Skullgirls Logo')
-  //     setModalBody('This is a Skullgirls Logo')
-  //   } else if (project === 'landing') {
-  //     setModalHeader('About Me')
-  //     setModalBody('This is a About Me')
-  //   }
-  //   setShow(true)
-  // }
+  useEffect(() => {
+    function animateOnScroll() {
+      const scrollPosition = window.scrollY;
+      const animateElements = document.querySelectorAll('.scroll-up');
+
+      animateElements.forEach(function(element) {
+        if (scrollPosition >= (element.offsetTop - window.innerHeight + 100)) {
+          element.classList.add('scroll-up-active');
+        }
+        else if(scrollPosition <= (element.offsetTop - window.innerHeight + 100)){
+          element.classList.remove('scroll-up-active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    return () => window.removeEventListener('scroll', animateOnScroll);
+  }, []);
 
   function changeModal(cardInfo) {
     setModalHeader(cardInfo.header);
@@ -47,30 +50,66 @@ function Home() {
 
   return (
     <>
-      <div>
+      <div className="container">
         <navbar id="home">
           <nav>
             <div className="title">Adam Princiotta</div>
             <ul>
               <li>
-                <a href="#home">Home</a>
+                <a href="#home" 
+                onClick={(e) => { 
+                  e.preventDefault();
+                  document.querySelector('#home').scrollIntoView({ 
+                      behavior: 'smooth' 
+                  }); 
+              }}>Home</a>
               </li>
               <li>
-                <a href="#about">About Me</a>
+                <a href="#about"
+                onClick={(e) => { 
+                  e.preventDefault();
+                  document.querySelector('#about').scrollIntoView({ 
+                      behavior: 'smooth' 
+                  }); 
+              }}>About Me</a>
               </li>
               <li>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#portfolio" onClick={(e) => { 
+                    e.preventDefault();
+                    document.querySelector('#portfolio').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    }); 
+                }}>Portfolio</a>
               </li>
               <li>
-                <a href="#skills">Skills</a>
+                <a href="#skills" 
+                onClick={(e) => { 
+                  e.preventDefault();
+                  document.querySelector('#skills').scrollIntoView({ 
+                      behavior: 'smooth' 
+                  }); 
+              }}>Skills</a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact" 
+                onClick={(e) => { 
+                  e.preventDefault();
+                  document.querySelector('#contact').scrollIntoView({ 
+                      behavior: 'smooth' 
+                  }); 
+              }}>Contact</a>
               </li>
             </ul>
           </nav>
         </navbar>
         {/* <h1>Welcome to my website!</h1> */}
+        <a className="scroll-up" href="home" 
+        onClick={(e) => { 
+          e.preventDefault();
+          document.querySelector('#home').scrollIntoView({ 
+              behavior: 'smooth' 
+          }); 
+      }}><div className="arrow-up"/>Scroll Up</a>
         <div className="intro" >
           <span className="bounce">H</span>
           <span className="bounce">I</span>
