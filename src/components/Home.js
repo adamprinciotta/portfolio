@@ -3,7 +3,7 @@ import "../styles/Home.css";
 import SG from "../images/Skullgirls Logo.png";
 import ToDo from "../images/Todo.PNG";
 import TechDoc from "../images/TechnicalDoc.PNG";
-import Arrow from "../images/arrow.png";
+import Eco from "../images/EcoImg.jpg";
 
 import Modal from "../components/Modal.js";
 
@@ -21,6 +21,8 @@ function Home() {
     function animateOnScroll() {
       const scrollPosition = window.scrollY;
       const animateElements = document.querySelectorAll('.scroll-up');
+
+      
 
       animateElements.forEach(function(element) {
         if (scrollPosition >= (element.offsetTop - window.innerHeight + 100)) {
@@ -44,9 +46,62 @@ function Home() {
     setShow(true);
   }
 
-  function sendMessage(){
 
-  }
+
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "your_email@example.com",
+        pass: "your_password",
+      },
+    });
+
+    const mailOptions = {
+      from: formData.email,
+      to: "your_email@example.com",
+      subject: formData.subject,
+      text: formData.message,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
+
+
+
+
 
   return (
     <>
@@ -103,7 +158,7 @@ function Home() {
           </nav>
         </navbar>
         {/* <h1>Welcome to my website!</h1> */}
-        <a className="scroll-up" href="home" 
+        <a className="scroll-up" href="#home" 
         onClick={(e) => { 
           e.preventDefault();
           document.querySelector('#home').scrollIntoView({ 
@@ -194,7 +249,13 @@ function Home() {
           <br />
           <br />
           {/* Make this link to the contact page */}
-          <a className="toContact" href="#contact">
+          <a className="toContact" href="#contact"
+          onClick={(e) => { 
+            e.preventDefault();
+            document.querySelector('#contact').scrollIntoView({ 
+                behavior: 'smooth' 
+            }); 
+        }}>
             Let's work together to bring your web project to life!
           </a>
         </p>
@@ -226,8 +287,8 @@ function Home() {
               changeModal({
                 header: "To Do List",
                 body: "I developed a personalized task management system that is seamlessly connected to each user's account. This feature enables users to log in to their account from any device and keep track of their progress at any time. With this system, users have the flexibility to name their tasks, specify their due date and time, designate their task type, and select which days the task will recur. Once created, users can customize their tasks as needed and remove any that are no longer relevant. The system will display the task list only on the designated recurring days, and users can easily track their progress by marking each task as completed or incomplete.",
-                link: "",
-                github: "",
+                link: "https://todoadamprinciotta.netlify.app/",
+                github: "https://github.com/adamprinciotta/ToDo/tree/master/ToDo",
               })
             }
           >
@@ -242,14 +303,14 @@ function Home() {
               changeModal({
                 header: "Technical Documentation",
                 body: "I developed a technical documentation page that comprehensively covers four core coding structures, namely variables, functions, loops, and conditionals. The documentation provides an explanation of each structure, including practical applications and coding examples to illustrate their use. The page is user-friendly, with a simple and intuitive navigation system that makes it easy for users to locate the information they need.",
-                link: "",
-                github: "",
+                link: "https://adamprinciotta.github.io/Techincal-Documentation/",
+                github: "https://github.com/adamprinciotta/Techincal-Documentation"
               })
             }
           >
             <div className="card2">
               <div className="cardTitle">Technical Documentation</div>
-              <img src={TechDoc}></img>
+              <img src={TechDoc} ></img>
             </div>
           </div>
           <div
@@ -265,17 +326,18 @@ function Home() {
           >
             <div className="card2">
               <div className="cardTitle">Landing Page</div>
-              <img src={TechDoc}></img>
+              <img src={Eco} width="100%" height="65%" objectFit="contain"></img>
             </div>
           </div>
           <Modal
-            title={modalHeader}
+            header={modalHeader}
             link={modalLink}
             github={modalGithub}
             onClose={() => setShow(false)}
             show={show}
+            body={modalBody}
           >
-            <p>{modalBody}</p>
+            {/* <p>{modalBody}</p> */}
           </Modal>
         </div>
       </div>
@@ -336,7 +398,7 @@ function Home() {
       </div>
       <hr></hr>
       {/* <div className="spacer" style={{ marginTop: "100px" }}></div> */}
-      <div className="contact" id="contact">
+      {/* <div className="contact" id="contact">
         <h1>Contact Me</h1>
         <div className="formBox">
           <div class="nameEmail">
@@ -360,20 +422,68 @@ function Home() {
           <div class="inputbox message">
             <p className="messageP">Message</p>
             <textarea required="required" rows="10" id="textarea"></textarea>
-
-            {/* 
-            const myTextArea = document.getElementById("myTextArea");
-            myTextArea.addEventListener("focus", function() {
-              myTextArea.classList.add("active");
-            });
-            myTextArea.addEventListener("blur", function() {
-              myTextArea.classList.remove("active");
-            }); */}
-            {/* <i></i> */}
           </div>
           <button className="sendMessageBtn" onClick={() => sendMessage}>Send Message</button>
         </div>
-      </div>
+      </div> */}
+      <div className="contact" id="contact">
+      <h1>Contact Me</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="formBox">
+          <div className="nameEmail">
+            <div className="inputbox">
+              <input
+                required="required"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <span>Name</span>
+              <i></i>
+            </div>
+            <br></br>
+            <div className="inputbox">
+              <input
+                required="required"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <span>Email</span>
+              <i></i>
+            </div>
+          </div>
+          <div className="inputbox subject">
+            <input
+              required="required"
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+            />
+            <span>Subject</span>
+            <i></i>
+          </div>
+          <div className="inputbox message">
+            <p className="messageP">Message</p>
+            <textarea
+              required="required"
+              rows="10"
+              id="textarea"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
+          </div>
+          <button className="sendMessageBtn" type="submit">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  );
     </>
   );
 }
