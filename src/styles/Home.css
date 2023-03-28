@@ -100,7 +100,8 @@ span:not(:hover) {
 .scrollDown {
   rotate: 90deg;
   position: absolute;
-  top: 90%;
+  top: 95%;
+  background-color: transparent;
 }
 
 .spacer {
@@ -126,7 +127,8 @@ span:not(:hover) {
 }
 
 .movingScroll {
-  font-size: 18px;
+  background-color: transparent;
+  font-size: 20px;
 }
 
 h1 {
@@ -570,10 +572,31 @@ textarea{
 .scroll-up.scroll-up-active {
   background-color: transparent;
   opacity: 1;
+  animation: scroll-animation 5s ease-in-out;
 }
 
 .scroll-up.scroll-up-active:hover{
   cursor: pointer;
+}
+
+
+
+@keyframes scroll-animation {
+  0%{
+    bottom: 10px;
+  }
+  25%{
+    bottom: 15px;
+  }
+  50%{
+    bottom: 10px;
+  }
+  75%{
+    bottom: 10px;
+  }
+  100%{
+    bottom: 10px;
+  }
 }
 
 .arrow-up {
@@ -583,4 +606,58 @@ textarea{
   padding: 3px;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
+}
+
+
+.arrow-down {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.introSpacer{
+  display: none;
+}
+
+.titleBreak{
+  display: none;
+}
+
+
+
+
+@media (max-width: 1100px){
+  
+}
+
+
+
+@media (max-width: 1000px) { 
+  .intro{
+    font-size: 60px;
+  }
+  /* .introSpacer { 
+    height: 0px;
+    display: block;
+  } */
+
+  .titleBreak{
+    display: block;
+  }
+
+  /* .Princiotta {
+    padding-left: 2px;
+    font-size: 1.5em;
+    color: white;
+    text-shadow: #45f3ff -7px 0 0;
+  }
+  
+  .Princiotta:hover {
+    transform: scale(1.2);
+  } */
+
+
+  
 }
