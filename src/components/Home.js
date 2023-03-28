@@ -9,6 +9,8 @@ import Modal from "../components/Modal.js";
 
 import { useState, useEffect } from "react";
 
+import emailjs from '@emailjs/browser'
+
 function Home() {
   const [show, setShow] = useState(false);
 
@@ -66,29 +68,39 @@ function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert("Submitted!")
+    // emailjs.send("service_qftjt3r","template_fqgvajx");
+    emailjs.send(process.env.REACT_APP_SERVICE_ID, "template_fqgvajx",{
+      conctact_name: formData.name,
+      contact_message: formData.message,
+      contact_subject: formData.subject,
+      reply_to: formData.email,
+      contact_email: formData.email,
+      }, process.env.REACT_APP_PUBLIC_KEY);
+    // emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, e.target, process.env.REACT_APP_PUBLIC_KEY)
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "your_email@example.com",
-        pass: "your_password",
-      },
-    });
+    // const transporter = nodemailer.createTransport({
+    //   service: "gmail",
+    //   auth: {
+    //     user: "your_email@example.com",
+    //     pass: "your_password",
+    //   },
+    // });
 
-    const mailOptions = {
-      from: formData.email,
-      to: "your_email@example.com",
-      subject: formData.subject,
-      text: formData.message,
-    };
+    // const mailOptions = {
+    //   from: formData.email,
+    //   to: "your_email@example.com",
+    //   subject: formData.subject,
+    //   text: formData.message,
+    // };
 
-    transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Email sent: " + info.response);
-      }
-    });
+    // transporter.sendMail(mailOptions, function (error, info) {
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     console.log("Email sent: " + info.response);
+    //   }
+    // });
 
     setFormData({
       name: "",
@@ -436,6 +448,7 @@ function Home() {
                 required="required"
                 type="text"
                 name="name"
+                id="contact_name"
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -448,6 +461,7 @@ function Home() {
                 required="required"
                 type="email"
                 name="email"
+                id="contact_email"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -460,6 +474,7 @@ function Home() {
               required="required"
               type="text"
               name="subject"
+              id="contact_subject"
               value={formData.subject}
               onChange={handleChange}
             />
@@ -471,7 +486,7 @@ function Home() {
             <textarea
               required="required"
               rows="10"
-              id="textarea"
+              id="contact_message"
               name="message"
               value={formData.message}
               onChange={handleChange}
@@ -483,7 +498,7 @@ function Home() {
         </div>
       </form>
     </div>
-  );
+  
     </>
   );
 }

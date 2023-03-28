@@ -20,7 +20,6 @@ const Modal = (props) => {
   
 
   useEffect(() => {
-    console.log(props.header)
     if(props.header === "Online Video Database"){
       setImage(OMO)
     }
@@ -43,7 +42,7 @@ const Modal = (props) => {
 
   }, [props]);
 
-  console.log(props.link);
+  // console.log(props.link);
 
   return ReactDOM.createPortal(
     <CSSTransition
