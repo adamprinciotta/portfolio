@@ -65,3 +65,20 @@ a:hover {
   cursor: default;
 }
 
+@media (max-width: 1000px) {
+  nav a{
+    font-size: 20px;
+  }
+
+  .title{
+    font-size: 22px;
+  }
+
+  nav{
+    height: 8vh;
+  }
+
+  nav::after{
+    top: 8vh;
+  }
+}

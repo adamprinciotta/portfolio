@@ -192,7 +192,8 @@ function Home() {
             <span className="bounce">A</span>
             <span className="bounce">M</span>
             <span>&nbsp; </span>
-            <span className="bounce">P</span>
+            <div className="introSpacer"><br/></div>
+            <span className="bounce Princiotta">P</span>
             <span className="bounce">R</span>
             <span className="bounce">I</span>
             <span className="bounce">N</span>
@@ -204,6 +205,7 @@ function Home() {
             <span className="bounce">A</span>
           </div>
           <br />
+          <br className="titleBreak"/>
           <span className="devTitle">F</span>
           <span className="devTitle">R</span>
           <span className="devTitle">O</span>
@@ -227,7 +229,7 @@ function Home() {
       </div>
 
       <div className="scrollDown">
-        <span className="movingScroll">Scroll Down</span> --{">"}
+        <span className="movingScroll">Scroll Down</span> <div className="arrow-down"></div>
       </div>
 
       <div className="spacer"></div>
