@@ -333,8 +333,8 @@ function Home() {
               changeModal({
                 header: "EcoBottle Landing Page",
                 body: "I designed and developed a landing page for a fictitious company named EcoBottle. The page comprises several user-friendly features, including an intuitive navigation bar, a section for signing up to receive email updates from the company, a comprehensive list of features, a testimonial from a satisfied customer, a pricing section with images of the available options, a clear call-to-action message, and a copyright footer.",
-                link: "",
-                github: "",
+                link: "https://adamprinciotta.github.io/Landing-Page/",
+                github: "https://github.com/adamprinciotta/Landing-Page",
               })
             }
           >

@@ -5,6 +5,7 @@ nav{
   height: 10vh;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 }
 
 nav::after{
@@ -19,6 +20,7 @@ nav::after{
 
 nav a{
   font-size: 2rem;
+  background-color: transparent;
 }
 
 .title{
@@ -80,5 +82,20 @@ a:hover {
 
   nav::after{
     top: 8vh;
+  }
+}
+
+@media (max-width: 600px){
+  ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  nav a{
+    font-size: 14px;
+    
+  }
+
+  .title{
+    font-size: 16px;
   }
 }
