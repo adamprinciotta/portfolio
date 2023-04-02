@@ -164,3 +164,28 @@
   width: 10px;
   background-color: transparent;
 }
+
+@media (max-width: 1000px){
+  .modal-body{
+    font-size: 16px;
+  }
+  .thin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .thin img{
+    height: 50%;
+    width: 75%;
+  }
+  .modal-body .widePic{
+    width: 100%;
+    height: 40%;
+    align-items: center;
+  }
+
+  .modal-title{
+    font-size: 20px;
+  }
+}
