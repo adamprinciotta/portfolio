@@ -69,7 +69,6 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Submitted!")
-    // emailjs.send("service_qftjt3r","template_fqgvajx");
     emailjs.send(process.env.REACT_APP_SERVICE_ID, "template_fqgvajx",{
       conctact_name: formData.name,
       contact_message: formData.message,
@@ -77,30 +76,6 @@ function Home() {
       reply_to: formData.email,
       contact_email: formData.email,
       }, process.env.REACT_APP_PUBLIC_KEY);
-    // emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, e.target, process.env.REACT_APP_PUBLIC_KEY)
-
-    // const transporter = nodemailer.createTransport({
-    //   service: "gmail",
-    //   auth: {
-    //     user: "your_email@example.com",
-    //     pass: "your_password",
-    //   },
-    // });
-
-    // const mailOptions = {
-    //   from: formData.email,
-    //   to: "your_email@example.com",
-    //   subject: formData.subject,
-    //   text: formData.message,
-    // };
-
-    // transporter.sendMail(mailOptions, function (error, info) {
-    //   if (error) {
-    //     console.log(error);
-    //   } else {
-    //     console.log("Email sent: " + info.response);
-    //   }
-    // });
 
     setFormData({
       name: "",
@@ -355,7 +330,6 @@ function Home() {
           </Modal>
         </div>
       </div>
-      {/* <div className="scrollDown2"><span className="movingScroll">Scroll Down</span> --{">"}</div> */}
       <hr style={{ marginTop: "40px" }}></hr>
       <div className="skills" id="skills">
         <h1>Skills</h1>
@@ -411,35 +385,6 @@ function Home() {
         </div>
       </div>
       <hr></hr>
-      {/* <div className="spacer" style={{ marginTop: "100px" }}></div> */}
-      {/* <div className="contact" id="contact">
-        <h1>Contact Me</h1>
-        <div className="formBox">
-          <div class="nameEmail">
-            <div class="inputbox">
-              <input required="required" type="text" />
-              <span>Name</span>
-              <i></i>
-            </div>
-            <br></br>
-            <div class="inputbox">
-              <input required="required" type="text" />
-              <span>Email</span>
-              <i></i>
-            </div>
-          </div>
-          <div class="inputbox subject">
-            <input required="required" type="text" />
-            <span>Subject</span>
-            <i></i>
-          </div>
-          <div class="inputbox message">
-            <p className="messageP">Message</p>
-            <textarea required="required" rows="10" id="textarea"></textarea>
-          </div>
-          <button className="sendMessageBtn" onClick={() => sendMessage}>Send Message</button>
-        </div>
-      </div> */}
       <div className="contact" id="contact">
       <h1>Contact Me</h1>
       <form onSubmit={handleSubmit}>
