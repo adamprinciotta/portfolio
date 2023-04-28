@@ -330,7 +330,6 @@ function Home() {
           </Modal>
         </div>
       </div>
-      {/* <div className="scrollDown2"><span className="movingScroll">Scroll Down</span> --{">"}</div> */}
       <hr style={{ marginTop: "40px" }}></hr>
       <div className="skills" id="skills">
         <h1>Skills</h1>
@@ -386,35 +385,6 @@ function Home() {
         </div>
       </div>
       <hr></hr>
-      {/* <div className="spacer" style={{ marginTop: "100px" }}></div> */}
-      {/* <div className="contact" id="contact">
-        <h1>Contact Me</h1>
-        <div className="formBox">
-          <div class="nameEmail">
-            <div class="inputbox">
-              <input required="required" type="text" />
-              <span>Name</span>
-              <i></i>
-            </div>
-            <br></br>
-            <div class="inputbox">
-              <input required="required" type="text" />
-              <span>Email</span>
-              <i></i>
-            </div>
-          </div>
-          <div class="inputbox subject">
-            <input required="required" type="text" />
-            <span>Subject</span>
-            <i></i>
-          </div>
-          <div class="inputbox message">
-            <p className="messageP">Message</p>
-            <textarea required="required" rows="10" id="textarea"></textarea>
-          </div>
-          <button className="sendMessageBtn" onClick={() => sendMessage}>Send Message</button>
-        </div>
-      </div> */}
       <div className="contact" id="contact">
       <h1>Contact Me</h1>
       <form onSubmit={handleSubmit}>
