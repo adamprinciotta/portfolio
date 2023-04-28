@@ -69,7 +69,6 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Submitted!")
-    // emailjs.send("service_qftjt3r","template_fqgvajx");
     emailjs.send(process.env.REACT_APP_SERVICE_ID, "template_fqgvajx",{
       conctact_name: formData.name,
       contact_message: formData.message,
@@ -77,30 +76,6 @@ function Home() {
       reply_to: formData.email,
       contact_email: formData.email,
       }, process.env.REACT_APP_PUBLIC_KEY);
-    // emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, e.target, process.env.REACT_APP_PUBLIC_KEY)
-
-    // const transporter = nodemailer.createTransport({
-    //   service: "gmail",
-    //   auth: {
-    //     user: "your_email@example.com",
-    //     pass: "your_password",
-    //   },
-    // });
-
-    // const mailOptions = {
-    //   from: formData.email,
-    //   to: "your_email@example.com",
-    //   subject: formData.subject,
-    //   text: formData.message,
-    // };
-
-    // transporter.sendMail(mailOptions, function (error, info) {
-    //   if (error) {
-    //     console.log(error);
-    //   } else {
-    //     console.log("Email sent: " + info.response);
-    //   }
-    // });
 
     setFormData({
       name: "",
